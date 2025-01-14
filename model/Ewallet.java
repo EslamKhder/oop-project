@@ -3,6 +3,8 @@ package main.project.model;
 import java.util.ArrayList;
 import java.util.List;
 
+
+// pls apply singleton
 public class Ewallet {
 
 

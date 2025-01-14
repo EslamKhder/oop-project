@@ -90,12 +90,11 @@ public class ApplicationServiceImpl implements ApplicationService {
         AccountService accountService = new AccountServiceImpl();
         // TODO SERVICE OF ACCOUNT TO LOGIN
         if (accountService.loginAccount(new Account(name, password))) {
-            System.out.println("Login  Success");
+            System.out.println("Login Success");
             services();
         } else {
             System.out.println("Account not Exist");
         }
-
     }
 
     private void services() {
@@ -103,9 +102,33 @@ public class ApplicationServiceImpl implements ApplicationService {
         System.out.println("1.Deposit   2.Withdraw    3.show details    4.Transfer    5. show balance   6.exit");
 
         // TODO create switch case such as on run function
+        // TODO every case on switch call function  don't forget (Invalid choose)
     }
 
-    void deposit(Account a, int money){
+    // TODO create deposit function
+    void deposit(Account a){
+        // input int money
+        // TODO pls validate money >= 100 and <= 20000
+
+    }
+
+    // TODO create Withdraw function
+    void withdraw(Account a){
+        // input int money
+        // TODO pls validate money >= 100 and <= 8000
+    }
+
+    void showDetails(Account a){
+
+    }
+
+    void transfer(Account withdrawAccount){
+        // TODO USER MUST give me user name of account that will transfer
+        // TODO input Account depositAccount
+        // TODO input int money
+    }
+
+    void showBalance(Account a){
 
     }
 }
