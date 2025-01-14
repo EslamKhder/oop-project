@@ -1,0 +1,110 @@
+TODO comments in your code:
+
+Run Method:
+Implement a mechanism to allow the user to retry for up to 4 attempts if they choose an invalid option.
+
+Signup Method:
+
+ Add validation for the username using validateUserName.
+ Add validation for the password using validatePassword.
+ Implement the AccountService.createAccount method.
+
+Login Method:
+
+ Add validation for the username using validateUserName.
+ Add validation for the password using validatePassword.
+ Implement the AccountService.loginAccount method.
+
+Services Method:
+
+ Create a switch-case structure similar to the run method.
+ Ensure each case calls the corresponding function (deposit, withdraw, showDetails, transfer, showBalance, or exit).
+ Add handling for invalid choices to prompt the user to retry.
+
+Deposit Method:
+ Accept an integer input for the deposit amount.
+ Validate that the deposit amount is between 100 and 20,000 inclusive.
+ Implement logic to add the deposit amount to the account's balance.
+ Withdraw Method:
+
+ Accept an integer input for the withdrawal amount.
+ Validate that the withdrawal amount is between 100 and 8,000 inclusive.
+ Check if the account has sufficient balance before withdrawing.
+ Deduct the amount from the account's balance.
+
+ShowDetails Method:
+
+ Display account details such as username, account balance, and any other relevant information.
+
+Transfer Method:
+
+ Prompt the user to input the username of the account to transfer funds to.
+ Retrieve the target account (depositAccount) using the provided username.
+ Accept an integer input for the transfer amount.
+ Validate the transfer amount and ensure the withdrawing account has sufficient balance.
+ Deduct the transfer amount from the source account and add it to the target account.
+
+ShowBalance Method:
+	Display the current balance of the account.
+
+
+
+ValidationServiceImpl class:
+
+ValidateUserName Method:
+
+ Implement logic to check if the userName starts with an uppercase letter.
+ Implement logic to check if the length of the userName is greater than or equal to 3.
+ Return true if both conditions are satisfied, else return false.
+
+ValidatePassword Method:
+
+ Implement logic to check if the password contains at least one digit (0-9).
+ Implement logic to check if the password contains at least one uppercase letter (A-Z).
+ Implement logic to check if the password contains at least one lowercase letter (a-z).
+ Implement logic to check if the password contains at least one special character (e.g., @, #, $, %, etc.).
+ Return true if all conditions are satisfied, else return false.
+
+
+
+AccountServiceImpl class:
+
+CreateAccount Method:
+
+ Retrieve the list of accounts from Ewallet and check if there is already an account with the same username.
+ If no account with the same username exists, add the new account and return true.
+ If an account with the same username exists, return false.
+
+LoginAccount Method:
+
+ Retrieve the list of accounts from Ewallet and check if there is an account with the same username and password.
+ If an account with the matching username and password exists, return true.
+ If no such account exists, return false.
+
+Deposit Method:
+
+ Check if the account exists in the Ewallet wallet; if not, print "Account not exist".
+ Check if the account is active; if not, print "Account not active".
+ Process the deposit if the account is valid and active, and return true if successful, or false if the deposit fails.
+
+Withdraw Method:
+
+ Check if the account exists in the Ewallet wallet; if not, print "Account not exist".
+ Check if the account is active; if not, print "Account not active".
+ Ensure the account has sufficient balance for withdrawal; if not, print "Can't withdraw because balance is insufficient".
+ Process the withdrawal if the account is valid, active, and has sufficient funds, and return true if successful, or false if the withdrawal fails.
+
+Transfer Method:
+
+ Check if both the depositAccount and withdrawAccount exist in the Ewallet wallet; if either does not, print "Account not exist".
+ Check if both the depositAccount and withdrawAccount are active; if either is not, print "Account not active".
+ Ensure the withdrawAccount has sufficient balance for the transfer; if not, print "Can't transfer because balance is insufficient".
+ Process the transfer from withdrawAccount to depositAccount and return true if successful, or false if the transfer fails.
+
+ShowAccountDetails Method:
+
+ Implement logic to display account details, such as username, account status, and balance.
+
+ShowBalance Method:
+
+ Implement logic to show the current balance of an account.
